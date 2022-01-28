@@ -7,3 +7,5 @@ In this webapp the user is able to see a certain number of hike plotted in a GIS
 
 For each trekkin the user is also able to see some useful information such as MAX-MIN elevation, the length of the trek and the elevation profile.
 In addition the user is able to create a digital backpack as a kind of memory about what stuff did he bring to the hike.
+
+This project is builded using npm and with the Openlayers package.

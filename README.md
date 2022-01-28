@@ -9,3 +9,9 @@ For each trekkin the user is also able to see some useful information such as MA
 In addition the user is able to create a digital backpack as a kind of memory about what stuff did he bring to the hike.
 
 This project is builded using npm with the Openlayers package.
+Working demo: http://prova12345aaa.altervista.org/PM
+
+TODOLIST: 
+  fix some layout bug on mobile
+  migrate to Vue.js
+  

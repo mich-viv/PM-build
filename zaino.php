@@ -19,8 +19,7 @@ if(isset($_POST["submit"])){
 				$subcat_value = array();
 				$subcat_desc = array();
 				$subcat_quant = array();
-				
-			  	//inizializza i vari elementi del file json che rappresentano i parametri dello zaino solo se sono inviati al server
+
 				foreach($_POST as $key => $value){
 					
 					if (strpos($key,"newnumber")!==false){
@@ -54,7 +53,7 @@ if(isset($_POST["submit"])){
 				$id_desc = array();
 				$id_quant = array();
 				
-				//inserisce gli elementi già presenti nel file json per creare la lista degli zaini
+				
 				for($j=0; $j<count($subcat_value); $j++){
 					
 					$id_val[] = explode("_",str_replace("newsubnumbers","",$key_val[$j]))[0];
@@ -92,12 +91,12 @@ if(isset($_POST["submit"])){
 				//echo "tot".$tot[0][nome dato alla categoria]; per accedere al totale della prima categoria
 				//echo $solution[0][0]["Descrizione"]; per accedere alla descrizione del primo cibo inserito
 				//echo $solution[1][0]["Descrizione"]; per accedere alla descrizione del secondo oggetto inserito
-				//aggiungere 1 array alla fine dello Zaino i-esimo contenente alla posizione i-esima il tot della quantità della categoria i-esima
+				//aggiungere 1 array alla gine dello Zaino i-esimo contenente alla posizione i-elima il tot della quantità della categoria i-esima
 				$current_data = file_get_contents('data.json');  
-                		$array_data = json_decode($current_data, true); 
+                $array_data = json_decode($current_data, true); 
 				
 
-				//inserisce il nuovo zaino dentro al file json
+				
 				$extra = array(
 						 "Zaino" => $zaino,
 						 "Totale" => $tot
@@ -106,6 +105,7 @@ if(isset($_POST["submit"])){
 				for($i=0; $i<count($cat); $i++){
 					
 					$extra[$cat["newnumber".$i]]=$solution[$i];
+					//$extra["Totale"]=$tot[$i];
 					
 				}//for-i
 				
@@ -113,19 +113,19 @@ if(isset($_POST["submit"])){
 				
 				$array_data[] = $extra;  
 				$final_data = json_encode($array_data);  
-			        if(file_put_contents('data.json', $final_data)){  
-						 
+			    if(file_put_contents('data.json', $final_data)){  
+						
 						 $message = "<label class='text-success'>File modificato con successo</label>"; 
 						 
 				} else {  
 				   
 					$error = 'JSON non esiste'; 
 					
-				}//if-else 
+				} 
 				
-	}//if-filejson exist
+	}
 		   
-}//if-post  
+}  
  ?>  
 <html>
 <head>
@@ -133,12 +133,12 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>PROJECT MOUNTAIN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-    <link rel="stylesheet" type="text/css" href="left.0cf57001.css" id="bootstrap-css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/left.0cf57001.css" id="bootstrap-css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
@@ -155,23 +155,23 @@ if(isset($_POST["submit"])){
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav">
 					<li class="nav-item text-center">
-						<a class="nav-link" href="index.html"><img src="logo_2.d44ab8d3.png"></a>
+						<a class="nav-link" href="/index.html"><img src="/logo_2.png"></a>
 					</li>
 					<li class="nav-item text-center">
-						<a class="nav-link" href="timeline.html">Cronistoria</a>
+						<a class="nav-link" href="/timeline.html">Cronistoria</a>
 					</li>
 					<li class="nav-item text-center">
-						<a class="nav-link" href="sentiero.html">Sentiero</a>
+						<a class="nav-link" href="/sentiero.html">Sentiero</a>
 					</li>
 					<li class="nav-item text-center">
-						<a class="nav-link" href="zaino.php">Zaino</a>
+						<a class="nav-link" href="/zaino.php">Zaino</a>
 					</li>
 					<li class="nav-item text-center dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item text-center" href="chisonoio.html">Chi sono io</a>
+							<a class="dropdown-item text-center" href="/chisono.html">Chi sono io</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item text-center" href="contatti.html">Contattami</a>
+							<a class="dropdown-item text-center" href="/contatti.html">Contattami</a>
 						</div>
 					</li>
 				</ul>
@@ -235,10 +235,8 @@ if(isset($_POST["submit"])){
 		<br />
 	 	
       </body>
-      <script>
-	
-	//creazione del canvas che rappresenza la ripartizione dei pesi
-	      
+	  <script>
+
 	var ctxP = document.getElementById("pieChart").getContext('2d');
 	var myPieChart = new Chart(ctxP, null);
 
@@ -256,15 +254,26 @@ if(isset($_POST["submit"])){
 	var quantity = [];
 	
 	$.getJSON('data.json', function(data) {
-
-		$.each(data, function (key, value) {
+		//console.log(data);
+		
+		/*
+        $.each(data, function(index, element) {
+            $('body').append($('<div>', {
+                text: element.Nome + ' ' + element.Cognome
+            }));
+        });*/
+		
+		 $.each(data, function (key, value) {
                 $("#drop").append($('<option></option>').val(value.Zaino).html(value.Zaino));
 				
-         	});
-
+         });
+		/*
+		 $('#drop').change(function () {
+                alert($(this).val());
+         });*/
 	});
 	
-	 $('.txt').on('keyup', function(){
+	  $('.txt').on('keyup', function(){
 			
 			var empty = false;
 			$('.txt').each(function() {
@@ -279,9 +288,9 @@ if(isset($_POST["submit"])){
 				$('#addNumber').attr('disabled', 'disabled');
 			} else {
 				$('#addNumber').attr('disabled', false);
-			}//if-else
+			}
 			
-	});
+	  });
 	
 	$("#addNumber").on("click",function(event){
 		
@@ -353,7 +362,7 @@ if(isset($_POST["submit"])){
 		
 		
 
-        });
+    });
 	
 	$("#container_in").on("click", ".removeNumber", function (event) {//riaggiornare l'id delle varie categorie al momento della cancellazione
 
@@ -371,7 +380,7 @@ if(isset($_POST["submit"])){
 		if(counter == 0){
 			$('#button_send').attr('disabled', 'disabled');
 			$('#button_update').attr('disabled', 'disabled');
-       		}//if
+        }//if
 		
     });
 
@@ -449,7 +458,7 @@ $('#button_update').on('click', function () {
 $('#button_load').on('click', function () {
 
 		var nm = $('#drop').val();
-		
+		//alert(nm);
 		$('.button_info').css('display', 'block');
 
 		var tot = [];
@@ -457,7 +466,7 @@ $('#button_load').on('click', function () {
 		var lb = [];
 		var key = [];
 		var obj =[];
-		
+		//console.log(nm);
 		
 		//valore dell'ultimo array contenete il totale delle somme delle categorie
 		var id=0;
@@ -475,6 +484,7 @@ $('#button_load').on('click', function () {
 							
 							if(index !== "Totale"){
 								
+								//console.log(index,element);
 								key[id_obj]=index;
 								obj[id_obj]=element;
 								id_obj++;
@@ -487,10 +497,13 @@ $('#button_load').on('click', function () {
 				}//if
 				
 			});
-
+			//console.log(a.Totale);
+			//console.log(obj);
 			var title = "<b>" + key[0] + "</b> : " + obj[0];
 			$('.modal-title').html(title);
 			var s ="";
+			//console.log(obj[1].length);
+			//console.log(Object.values(obj[1][0]));
 			
 			for(var i=1; i<key.length; i++){
 				
@@ -505,7 +518,7 @@ $('#button_load').on('click', function () {
 					e[j] = Object.values(obj[i][j]);
 					
 				}//for-j
-				//console.log(k[0][0]);
+				console.log(k[0][0]);
 				
 				//console.log(k.length);
 				for(var z=0; z<k.length; z++){
@@ -542,6 +555,7 @@ $('#button_load').on('click', function () {
 				
 			}//for-i
 			
+			//console.log(Object.keys(tot[0][1]));
 			
 			if(myPieChart !== null){
 				myPieChart.destroy();
@@ -567,7 +581,6 @@ $('#button_load').on('click', function () {
 		});
 
 });
-
 </script>
 </body>
     

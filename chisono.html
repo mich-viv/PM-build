@@ -9,11 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 	<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-  <link rel="stylesheet" href="/sentiero.e9251449.css"></head>
-  
+	
+    <style>
+      
+
+    </style>
+  </head>
   <body style="margin-right: 0px;">
   <div class="row">
 		<nav class="navbar navbar-expand-md navbar-dark fixed-left" style="background-color:#01796f;">
@@ -53,60 +55,11 @@
 	</div>
     <div class="row-fluid">
       <div class="span12">
-        <div id="map" class="map"></div>
+	 <h1 style="text-align:center;">CHI SONO IO</h1>
+        <p style="text-align:center;"class="index">Web developer e studente di ingegneria dell'informazione all'università degli studi di padova.
+		</p>
       </div>
     </div>
-	<table>
-		<tr>
-			<form class="form">
-				<!--<td>
-					  <label>Page size </label>
-					  <select id="format">
-						<option value="a0">A0 (slow)</option>
-						<option value="a1">A1</option>
-						<option value="a2">A2</option>
-						<option value="a3">A3</option>
-						<option value="a4" selected="">A4</option>
-						<option value="a5">A5 (fast)</option>
-					   </select>
-				</td>
-				<td>
-					  <label>Resolution </label>
-					  <select id="resolution">
-						<option value="72">72 dpi (fast)</option>
-						<option value="150">150 dpi</option>
-						<option value="300">300 dpi (slow)</option>
-					  </select>
-				</td>-->
-				<td>
-					  <label>scegli il sentiero che vuoi visualizzare </label>
-					  <select style="width:77px;" id="track">
-						<option value="res" selected="">scegli</option>
-						<option value="560">cai 560</option>
-						<option value="567">cai 567</option>
-						<option value="483">cai 483</option>
-						<option value="762">cai 762</option>
-						<option value="215">cai 215</option>
-						<option value="333">sentiero coldose`</option>
-						<option value="334">sentiero paolo e nicola</option>
-						<option value="764">sentiero bedin</option>
-					  </select>
-				</td>
-			</form>
-			<td>
-				<button id="reset">Resetta mappa</button>
-				<!--<button id="export-pdf">Esporta PDF</button>-->
-			</td>
-			<td>
-				<div style="padding: 0px 10px 0px 10px; vertical-align:middle; color:red; font-size: 20px;" id="info_p"><b>&nbsp;</b></div>
-				<div style="padding: 0px 10px 10px 10px; text-align:center;background-color:white;text-align:left;" id="result">
-				</div>
-			</td>
-		</tr>
-
-		
-	</table>
-		<canvas id="altitude" style="max-width: 750px;"></canvas>
+	
   </body>
-  <script src="/js/sentiero.js"></script>
 </html>

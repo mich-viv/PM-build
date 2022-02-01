@@ -178,29 +178,12 @@ var xmlhttp;
 							return;
 						}
 					}
-					//bodyFontSize: 23
+
 				}
 			}
 			
 		});
 	
-			
-			
-			
 	}//function
-	
-	
-	/*
-	plotAltitude();
-	
-	var inizio;//punto di inizio del sentiero
-	var fine;//punto di fine del sentiero
-	
-	
-	function plotAltitude(){
-		
-		
-	}//plotAltitude
-	*/
 	
 	
